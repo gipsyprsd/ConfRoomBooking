@@ -1,0 +1,27 @@
+<span class="homeLnk"><img src="../www/img/home.png" /></span> </span>
+<% _.each(roomDetails, function(rd, i) { %> 
+    <div class="contentCls">
+	<ul class="rowCls" >
+	<li class="firstCls"><%= rd.name%>  </li>
+	<li class=""><%= rd.location%></li>
+	<li class=""><%= rd.capacity%></li>
+	<li class="lastCls">
+	<% if (rd.available) { %>
+		<span class="ui-ava-btn bookCls" data-rooms="<%= rd.name%>">Available</span> 
+	<% } else {%>
+		<span class="ui-bkd-btn bookCls" data-rooms="<%= rd.name%>">Booked by <%= rd.bookedBy%></span>
+	<%}%>
+	</li>
+	<li class="clearFloat"></li>
+	</ul>
+	</div>
+<% }); %>
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,33 @@
+<div class="detailCls">
+	<span class="homeLnk"><img src="../www/img/home.png" /></span>
+	<div class="roomHeader"><%= roomDetails[0].name%> </div>
+	 <div class="detailsContainer">
+	 <ul>
+		
+		<li class="">Location: <%= roomDetails[0].location%></li>
+		<li class="">Phone Number: <%= roomDetails[0].phone%></li>
+		<li class="">Capacity: <%= roomDetails[0].capacity%></li>
+	</ul>
+	 <span class="mapIcon"> <img src="../www/map.png"/> </span>
+	 <span class="favIcon" data-rooms="<%= roomDetails[0].name%>"> <img src="../www/img/favourites_link.png" width="32px" height="32px" /> </span>
+	</div>
+</div>
+
+<% _.each(roomDetails, function(rd, i) { %> 
+    <div class="contentCls">
+	<ul class="rowCls" >
+	<li class="firstCls"><%= rd.startTime%>  </li>
+	<li class=""><%= rd.endTime%></li>
+	<li class="lastDetail">
+	<% if (rd.available) { %>
+		<span class="detail-ava-btn quickBook" data-rooms="<%= rd.name%> <%= rd.startTime%> <%= rd.endTime%>">Book</span>
+	<% } else {%>
+	<span class="ui-bkd-btn">Booked by <%= rd.bookedBy%></span> <a href="tel:<%= rd.bookedByPhone%>"><img src="../www/phone-small-icon.png" /></a>
+	<%}%>
+	</li>
+	<li class="clearFloat"></li> 
+	</ul> 
+	</div>
+	 
+	
+<% }); %>

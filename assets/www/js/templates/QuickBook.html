@@ -1,0 +1,16 @@
+<% _.each(roomDetails, function(rd, i) { %> 
+    <div class="contentCls">
+	<ul class="rowCls" >
+	<li>
+	<% if (rd.status) { %>
+<span class="success">Booking Successful </span>
+	<% } else {%>
+<span class="failure">Booking Failed</span>
+	<%}%>
+	</li>
+	<li class="clearFloat"></li> 
+	</ul>
+	</div>
+	 
+	
+<% }); %>
